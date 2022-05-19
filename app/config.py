@@ -5,8 +5,9 @@ class EnvSettings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     EXPIRE_TIME_MIN: int
+    DATABASE_TYPE: str
     DATABASE_USER: str
-    DATABASE_PORT: str
+    DATABASE_HOST: str
     DATABASE_NAME: str
     DATABASE_PASSWORD: str
 
