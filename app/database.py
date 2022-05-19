@@ -1,9 +1,9 @@
-from .config import env_settings
+from app.config import env_settings
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{env_settings.database_user}:@{env_settings.database_port}/{env_settings.database_name}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{env_settings.DATABASE_USER}:@{env_settings.DATABASE_PORT}/{env_settings.DATABASE_NAME}"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
