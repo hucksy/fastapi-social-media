@@ -24,7 +24,7 @@ def add_vote(vote: schemas.VotesIn,
     queried_post = db.query(models.Post).filter(models.Post.post_id == vote.post_id).first()
     if queried_post is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="that post doesn't exist")
-    # if it's a postitive vote, check if it already exists before adding it
+    # if it's a positive vote, check if it already exists before adding it
     if vote.vote:
         queried_vote = db.query(models.Votes).filter(models.Votes.user_id == current_user.user_id,
                                                      models.Votes.post_id == vote.post_id).first()
